@@ -1,0 +1,8 @@
+{
+  "name": "starbucks-reviews-api",
+  "version": "0.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:bntzio/starbucks-reviews-api.git",
+  "author": "Enrique Benitez <hello@bntz.io>",
+  "license": "MIT"
+}
