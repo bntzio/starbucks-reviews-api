@@ -37,6 +37,21 @@ app.post('/locations', (req, res) => {
   }, err => res.status(400).send(err))
 })
 
+app.get('/locations/:id', (req, res) => {
+  const id = req.params.id
+
+  if (!ObjectID.isValid(id)) {
+    return res.status(404).send()
+  }
+
+  Location.findOne({ _id: id }).then(loc => {
+    if (!loc) {
+      return res.status(404).send()
+    }
+    res.send({ location: loc })
+  }).catch(err => res.status(400).send(err))
+})
+
 app.delete('/locations/:id', (req, res) => {
   const id = req.params.id
 
